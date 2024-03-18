@@ -1,8 +1,8 @@
-###  DATE: 
+###  DATE: 15/03/24
 
-###  NAME: 
-###  ROLL NO :
-###  DEPARTMENT: 
+###  NAME: Tharika S
+###  ROLL NO :212222230159
+###  DEPARTMENT: AIDS
 
 
 # EXPERIMENT NO 05 INTERFACING ANALOG OUTPUT SERVO MOTOR WITH ARDUINO
@@ -60,6 +60,10 @@ CIRCUIT DIAGRAM
  ![image](https://user-images.githubusercontent.com/36288975/163544618-6eb8a7b5-7f1a-428a-8d9f-fd899b145efb.png)
 
 ### FIGURE 04 CIRCUIT DIAGRAM
+![image](https://github.com/tharikasankar/EXPERIMENT-NO--05-INTERFACING-ANALOG-OUTPUT-SERVO-MOTOR-WITH-ARDUINO-/assets/119475507/5cba9e99-a203-46b6-96ed-aa36832dc3a4)
+## SCHEMATIC REPRESENTATION:
+![image](https://github.com/tharikasankar/EXPERIMENT-NO--05-INTERFACING-ANALOG-OUTPUT-SERVO-MOTOR-WITH-ARDUINO-/assets/119475507/c73b8ceb-0ede-4d5f-affa-5c14f539f541)
+
 
 ### PROCEDURE:
 1.	Connect the circuit as per the circuit diagram 
@@ -74,6 +78,38 @@ CIRCUIT DIAGRAM
 
 
 ### PROGRAM :
+```
+#include <Servo.h>
+Servo s;
+int pos=0;
+void setup()
+{
+ s.attach(9);
+ Serial.begin(9600);
+}
+
+void loop()
+{
+ for(pos=0;pos<=180;pos+=1)
+ {
+   s.write(pos);
+   delay(20);
+   //Serial.print("Angle=");
+   Serial.println(pos);
+ }
+ for(pos=180;pos>=0;pos-=1)
+ {
+   s.write(pos);
+   delay(20);
+   //Serial.print("Angle=");
+   Serial.println(pos);
+ }
+ 
+}
+```
+## OUTPUT:
+![image](https://github.com/tharikasankar/EXPERIMENT-NO--05-INTERFACING-ANALOG-OUTPUT-SERVO-MOTOR-WITH-ARDUINO-/assets/119475507/920efcef-5579-414a-b15e-199031aaf221)
+
  
 
 
